@@ -31,6 +31,9 @@ set wrap                          " Turn on line wrapping.
 set scrolloff=2                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
+if has('mouse')
+    set mouse=a                   " Enable mouse in terminal
+endif
 
 set visualbell                    " No beeping.
 
