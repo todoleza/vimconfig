@@ -5,9 +5,11 @@ set nocompatible                  " Must come first because it changes other opt
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
+execute pathogen#infect()
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
+"set cursorcolumn " show vertical column on cursor
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -51,7 +53,7 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Or use vividchalk
-colorscheme desert
+colorscheme murphy
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
