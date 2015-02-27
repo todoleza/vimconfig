@@ -1,8 +1,4 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
-
 set nocompatible                  " Must come first because it changes other options.
-
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 execute pathogen#infect()
@@ -36,6 +32,12 @@ set title                         " Set the terminal's title
 "if has('mouse')
 "    set mouse=a                   " Enable mouse in terminal
 "endif
+if &term=~'xterm'
+    set t_Co=256
+    let g:solarized_termcolors=256
+    set background=dark
+endif
+colorscheme murphy
 
 set visualbell                    " No beeping.
 
@@ -54,7 +56,7 @@ set laststatus=2                  " Show the status line all the time
 " ^^ obsoleted by airline plugin
 
 " Or use vividchalk
-colorscheme murphy
+" colorscheme murphy
 
 " Tab mappings.
 map <leader>tt :tabnew<lf>
