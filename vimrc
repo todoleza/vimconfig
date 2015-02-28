@@ -1,3 +1,4 @@
+" vim: ts=2 sw=2 :
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   if &compatible
@@ -23,18 +24,22 @@ NeoBundle 'Shougo/vimproc.vim', {
 "NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-airline', { 'rev' : 'v0.7' }
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Valloric/YouCompleteMe', {
+\ 'build' : {
+\   'linux' : './install.sh',
+\   },
+\ }
+NeoBundle 'rking/ag.vim'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
 "NeoBundle 'flazz/vim-colorschemes'
 
-" You can specify revision/branch/tag.
-" NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
 call neobundle#end()
-
-" Required:
-filetype plugin indent on
 
 NeoBundleCheck
 
@@ -42,6 +47,9 @@ syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 "execute pathogen#infect()
 
+if executable('ag')
+  let g:ackprg = 'ag --column'
+endif
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 "set cursorcolumn " show vertical column on cursor
@@ -68,6 +76,7 @@ set wrap                          " Turn on line wrapping.
 set scrolloff=2                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
+set confirm
 "if has('mouse')
 "    set mouse=a                   " Enable mouse in terminal
 "endif
@@ -76,7 +85,7 @@ if &term=~'xterm'
     let g:solarized_termcolors=256
     set background=dark
 endif
-colorscheme murphy
+colorscheme solarized
 
 set visualbell                    " No beeping.
 
@@ -140,4 +149,22 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
-command StripTrailingSpaces call Preserve("%s/\\s\\+$//e")
+command! StripTrailingSpaces call Preserve("%s/\\s\\+$//e")
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+

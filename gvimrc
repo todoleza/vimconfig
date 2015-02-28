@@ -1,2 +1,2 @@
-colorscheme torte
+"colorscheme torte
 "colorscheme slate
