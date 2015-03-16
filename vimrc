@@ -83,8 +83,8 @@ set confirm
 if &term=~'xterm'
     set t_Co=256
     let g:solarized_termcolors=256
-    set background=dark
 endif
+set background=dark
 colorscheme solarized
 
 set visualbell                    " No beeping.
