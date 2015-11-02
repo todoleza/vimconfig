@@ -22,6 +22,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 "NeoBundle 'Shougo/neosnippet.vim'
 "NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-endwise'
