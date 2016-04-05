@@ -20,8 +20,6 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-"NeoBundle 'Shougo/neosnippet.vim'
-"NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sensible'
@@ -33,10 +31,13 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Valloric/YouCompleteMe', {
 \ 'build' : {
-\   'linux' : './install.sh',
+\   'linux' : 'git update --init --recurse; ./install.py',
 \   },
 \ }
 NeoBundle 'rking/ag.vim'
+NeoBundle 'Yggdroot/indentLine'
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'Shougo/neosnippet-snippets'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
 "NeoBundle 'flazz/vim-colorschemes'
 
