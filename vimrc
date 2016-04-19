@@ -30,9 +30,12 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Valloric/YouCompleteMe', {
-\ 'build' : {
-\   'linux' : 'git update --init --recurse; ./install.py',
-\   },
+\ 'build'      : {
+   \ 'mac'     : './install.py',
+   \ 'unix'    : './install.py',
+   \ 'windows' : 'install.py',
+   \ 'cygwin'  : './install.py'
+   \ }
 \ }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'Yggdroot/indentLine'
@@ -169,4 +172,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:neobundle#types#git#enable_submodule = 1
+let g:neobundle#install_process_timeout = 1500
 
