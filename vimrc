@@ -25,7 +25,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'bling/vim-airline', { 'rev' : 'v0.7' }
+NeoBundle 'bling/vim-airline' ", { 'rev' : 'v0.7' }
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'altercation/vim-colors-solarized'
