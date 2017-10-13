@@ -29,6 +29,7 @@ NeoBundle 'bling/vim-airline' ", { 'rev' : 'v0.7' }
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'Valloric/YouCompleteMe', {
 \ 'build'      : {
    \ 'mac'     : './install.py',
