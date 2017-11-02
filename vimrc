@@ -40,6 +40,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
 \ }
 NeoBundle 'rking/ag.vim'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'jamessan/vim-gnupg'
 "NeoBundle 'Shougo/neosnippet.vim'
 "NeoBundle 'Shougo/neosnippet-snippets'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -175,4 +176,4 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:neobundle#types#git#enable_submodule = 1
 let g:neobundle#install_process_timeout = 1500
-
+let g:GPGExecutable = 'gpg2'
