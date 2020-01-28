@@ -1,54 +1,53 @@
 " vim: ts=2 sw=2 :
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
+" Required:
+set runtimepath+=/home/todoleza/.cache/dein/repos/github.com/Shougo/dein.vim
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+" Required:
+if dein#load_state('/home/todoleza/.cache/dein')
+  call dein#begin('/home/todoleza/.cache/dein')
 
-NeoBundle 'jamessan/vim-gnupg'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'bling/vim-airline' ", { 'rev' : 'v0.7' }
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'Valloric/YouCompleteMe', {
-\ 'build'      : {
-   \ 'mac'     : './install.py',
-   \ 'unix'    : './install.py',
-   \ 'windows' : 'install.py',
-   \ 'cygwin'  : './install.py'
-   \ }
-\ }
-NeoBundle 'rking/ag.vim'
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'jamessan/vim-gnupg'
-"NeoBundle 'Shougo/neosnippet.vim'
-"NeoBundle 'Shougo/neosnippet-snippets'
-"NeoBundle 'ctrlpvim/ctrlp.vim'
-"NeoBundle 'flazz/vim-colorschemes'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/todoleza/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-call neobundle#end()
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('jamessan/vim-gnupg')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-sensible')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('bling/vim-airline')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('tpope/vim-surround')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('chase/vim-ansible-yaml')
+  call dein#add('Valloric/YouCompleteMe', {'build': 'install.py'})
+  call dein#add('rking/ag.vim')
+  call dein#add('Yggdroot/indentLine')
 
-NeoBundleCheck
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
