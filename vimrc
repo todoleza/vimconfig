@@ -29,7 +29,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('tpope/vim-surround')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('chase/vim-ansible-yaml')
-  call dein#add('Valloric/YouCompleteMe', {'build': 'install.py'})
+  call dein#add('Valloric/YouCompleteMe', {'build': 'python install.py'})
   call dein#add('rking/ag.vim')
   call dein#add('Yggdroot/indentLine')
 
