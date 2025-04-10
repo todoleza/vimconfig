@@ -32,6 +32,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('Valloric/YouCompleteMe', {'build': 'python install.py'})
   call dein#add('rking/ag.vim')
   call dein#add('Yggdroot/indentLine')
+  call dein#add('alker0/chezmoi.vim')
 
   " Required:
   call dein#end()
